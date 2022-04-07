@@ -1,4 +1,4 @@
-# juandayz's Attach Zeds to Vehicles (Fixed)
+# DayZ Epoch - juandayz's Attach Zeds to Vehicles (Fixed)
 Originally made by [juandayz](https://epochmod.com/forum/profile/36144-juandayz/) - 
 [Original script](https://epochmod.com/forum/topic/43837-release-attach-zeds-to-vehicles/)
 ## Bomb's Changes:
