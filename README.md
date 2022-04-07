@@ -1,5 +1,5 @@
 # juandayz's Attach Zeds to Vehicles (Fixed)
-Originally made by [juandayz](https://epochmod.com/forum/profile/36144-juandayz/)
+Originally made by [juandayz](https://epochmod.com/forum/profile/36144-juandayz/) - 
 [Original script](https://epochmod.com/forum/topic/43837-release-attach-zeds-to-vehicles/)
 ## Bomb's Changes:
 * Added fixes from the comment section of the original script.
