@@ -30,6 +30,7 @@ if (_canPickLight && !dayz_hasLight && !_isPZombie) then {
 	s_player_grabflare = -1;
 	s_player_removeflare = -1;
 };```
+
 and below it add:
 ```sqf
 //Beginning OF ZED ATTACH SECTION
@@ -46,6 +47,7 @@ if (_invehicle && _allowedvehiclesA && (driver _vehicle == player)) then {
     s_player_zedsr = -1;
 };
 //END OF ZED ATTACH SECTION```
+
 Next find:
 ```sqf
     //Towing with tow truck
@@ -63,6 +65,7 @@ Next find:
 		s_player_towing = -1;
 	};
 	*/ ```
+
 and below it add:
 ``` if (_isalive && {(_cursortarget isKindOf "zZombie_base")}) then {
 		_zattached = _cursortarget getVariable["zattached", false];
@@ -86,12 +89,14 @@ and below it add:
 			s_player_zhide5 = -1;
 		};
 	}; ```
+
 Lastly, find `//Engineering` and below it add:
 ```sqf
     player removeAction s_player_zhide5;
 	s_player_zhide5 = -1;
 	player removeAction s_player_zhide4;
 	s_player_zhide4 = -1; ```
+
 5. In your custom variables.sqf file, below `if (!isDedicated) then {` and below it add:
 ```
 	ZED_AllowedVehicles = [
@@ -103,6 +108,7 @@ Lastly, find `//Engineering` and below it add:
 		"V3S_Open_TK_EP1",
 		"KamazOpen_DZE"
 	]; ```
+
 If you don't already have `dayz_resetSelfActions = {` in your variables.sqf file, copy the example from the example folder and paste it below `if (!isDedicated) then {`. Otherwise, if you do already have `dayz_resetSelfActions` then find `s_player_checkWallet = -1;` and below it copy:
 ```sqf
 		s_player_zedsr = -1;
