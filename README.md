@@ -16,7 +16,7 @@ Originally made by [juandayz](https://epochmod.com/forum/profile/36144-juandayz/
 2. Extract the attachzeds folder into your __mission root__, ie `DayZ_Epoch_11.Chernarus` folder so the path looks like this: `mpmissions\your_instance\attachzeds\`
 3. If you don't already have a custom variables, compiles, and fn_selfActions files, follow AirwavesMan's instructions [here](https://github.com/AirwavesMan/custom-epoch-functions)
 4. In fn_selfActions.sqf, add find following:
-```sqf
+~~~sqf
 //Grab Flare
 if (_canPickLight && !dayz_hasLight && !_isPZombie) then {
 	if (s_player_grabflare < 0) then {
@@ -29,10 +29,10 @@ if (_canPickLight && !dayz_hasLight && !_isPZombie) then {
 	player removeAction s_player_removeflare;
 	s_player_grabflare = -1;
 	s_player_removeflare = -1;
-};```
+};~~~
 
 and below it add:
-```sqf
+~~~sqf
 //Beginning OF ZED ATTACH SECTION
 local _allowedvehiclesA = typeOf _vehicle in ZED_AllowedVehicles;
 
@@ -46,10 +46,10 @@ if (_invehicle && _allowedvehiclesA && (driver _vehicle == player)) then {
     DZE_myVehicle removeAction s_player_zedsr;
     s_player_zedsr = -1;
 };
-//END OF ZED ATTACH SECTION```
+//END OF ZED ATTACH SECTION~~~
 
 Next find:
-```sqf
+~~~sqf
     //Towing with tow truck
 	/*
 	if(_typeOfCursorTarget == "TOW_DZE") then {
@@ -64,10 +64,10 @@ Next find:
 		player removeAction s_player_towing;
 		s_player_towing = -1;
 	};
-	*/ ```
+	*/ ~~~
 
 and below it add:
-``` if (_isalive && {(_cursortarget isKindOf "zZombie_base")}) then {
+~~~ if (_isalive && {(_cursortarget isKindOf "zZombie_base")}) then {
 		_zattached = _cursortarget getVariable["zattached", false];
 		if (!_zattached) then {
 			if ("equip_rope" in magazines player) then {
@@ -88,17 +88,17 @@ and below it add:
 			player removeAction s_player_zhide5;
 			s_player_zhide5 = -1;
 		};
-	}; ```
+	}; ~~~
 
 Lastly, find `//Engineering` and below it add:
-```sqf
+~~~sqf
     player removeAction s_player_zhide5;
 	s_player_zhide5 = -1;
 	player removeAction s_player_zhide4;
-	s_player_zhide4 = -1; ```
+	s_player_zhide4 = -1; ~~~
 
 5. In your custom variables.sqf file, below `if (!isDedicated) then {` and below it add:
-```
+~~~
 	ZED_AllowedVehicles = [
 		"hilux1_civil_3_open_DZE",
 		"datsun1_civil_3_open_DZE",
@@ -107,13 +107,13 @@ Lastly, find `//Engineering` and below it add:
 		"V3S_Open_TK_CIV_EP1",
 		"V3S_Open_TK_EP1",
 		"KamazOpen_DZE"
-	]; ```
+	]; ~~~
 
 If you don't already have `dayz_resetSelfActions = {` in your variables.sqf file, copy the example from the example folder and paste it below `if (!isDedicated) then {`. Otherwise, if you do already have `dayz_resetSelfActions` then find `s_player_checkWallet = -1;` and below it copy:
-```sqf
+~~~sqf
 		s_player_zedsr = -1;
 		s_player_zhide4 = -1;
-		s_player_zhide5 = -1; ```
+		s_player_zhide5 = -1; ~~~
 
 * That's it for the install.
 
