@@ -22,7 +22,7 @@ if (!_zattached) then {
                 if (typeOf _car == _x select 0) exitwith { //exit forEach loop if vehicle is found
                     _carMaxZombies = _x select 1;
                 };
-            } forEach ZED_AllowedZombiesPervehicle;
+            } forEach _zed_allowedZombiesPerVehicle;
             if (_carMaxZombies == 0) exitwith { //exit script if vehicle is not found
                 systemChat "No allowed zombies in this vehicle.";
             };
